@@ -1,4 +1,12 @@
 steps:
+  - id: update-deployment-repo
+    name: gcr.io/cloud-builders/git
+    entrypoint: bash
+    args:
+      - -c
+      - >-
+        git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
+
 #  - name: 'gcp-storage-sync'
   - name: qcr.io/cloud-builders/gsutil
     args:
@@ -8,17 +16,11 @@ steps:
       - '-r'
 #      - 'gs://${_GCS_BUCKET}'
       - 'gs://educational-content-publish-tbucket'
+
 #substitutions:
 #  _GCS_BUCKET: null
-  - id: update-deployment-repo
-    name: gcr.io/cloud-builders/git
-    entrypoint: bash
-    args:
-      - -c
-      - >-
-        git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
 
-#timeout: 3600s
+timeout: 3600s
 
 substitutions:
   _DEPLOYMENT_REPO_URL: null
