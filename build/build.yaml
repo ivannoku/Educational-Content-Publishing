@@ -1,11 +1,11 @@
 steps:
-  # - id: update-deployment-repo
-  #   name: gcr.io/cloud-builders/git
-  #   entrypoint: bash
-  #   args:
-  #     - -c
-  #     - >-
-  #       git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
+  - id: update-deployment-repo
+    name: gcr.io/cloud-builders/git
+    entrypoint: bash
+    args:
+      - -c
+      - >-
+        git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
 
   - name: gcp-storage-sync
 #  - name: qcr.io/cloud-builders/gsutil
@@ -16,8 +16,7 @@ steps:
         gsutil rsync -rd -x ${_DEPLOYMENT_REPO_URL} . gs://${_GCS_BUCKET}
 #        gsutil cp -r 'https://github.com/ivannoku/Educational-Content-Publishing.git' 'gs://educational-content-publish-tbucket'
 
-#substitutions:
-#  _GCS_BUCKET: null
+
 
 timeout: 3600s
 
@@ -25,3 +24,5 @@ substitutions:
   _DEPLOYMENT_REPO_URL: null
   _RELEASE_NAME: null
   _GCS_BUCKET: null
+
+logsBucket: 'gs://educational-content-publish-logs'
