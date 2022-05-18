@@ -7,14 +7,12 @@ steps:
       - >-
         git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
 
-#  - name: gcp-storage-sync
-  - name: qcr.io/cloud-builders/gsutil
-    entrypoint: bash
+  - name: 'gcr.io/cloud-builders/gsutil'
+    entrypoint: 'bash'
     args:
-      - -c
-      - >-
-        gsutil rsync -rd . gs://${_GCS_BUCKET}
-#        gsutil cp -r 'https://github.com/ivannoku/Educational-Content-Publishing.git' 'gs://educational-content-publish-tbucket'
+    - '-c'
+    - |
+      gsutil rsync -rd . gs://${_GCS_BUCKET}
 
 
 
