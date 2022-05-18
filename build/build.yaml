@@ -1,6 +1,10 @@
 steps:
-  - name: 'gcp-storage-sync'
-    args: 
-    - -rd 
-    - -x
-      gsutil rsync -rd -x \.git . gs://educational-content-publish-tbucket
+#  - name: 'gcp-storage-sync'
+  - name: qcr.io/cloud-builders/gsutil
+    args:
+      - '_m'
+      - 'rsync'
+      - '-d'
+      - '=r'
+      - 'dags'
+      - 'qs: //${GCS_BUCKET}'
