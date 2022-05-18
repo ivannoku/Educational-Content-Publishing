@@ -1,0 +1,6 @@
+steps:
+  - name: Copy files 
+    args:
+    - -c 
+    - >-
+      gsutil rsync -rd -x \.git . gs://educational-content-publish-tbucket
