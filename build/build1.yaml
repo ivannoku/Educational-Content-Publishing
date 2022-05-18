@@ -8,3 +8,5 @@ steps:
         gsutil rsync -rd -x https://github.com/ivannoku/Educational-Content-Publishing.git gs://educational-content-publish-tbucket
 
 timeout: 3600s
+
+logsBucket: 'gs://educational-content-publish-logs'
