@@ -12,7 +12,7 @@ steps:
     args:
     - '-c'
     - |
-      gsutil rsync -rd . gs://${_GCS_BUCKET}
+      gsutil -m rsync -rd 'Educational-Content-Publishing' gs://${_GCS_BUCKET}
 
 
 
