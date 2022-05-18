@@ -22,7 +22,7 @@ substitutions:
   _BUILD_ENV: null
   _APP_NAME: null
   _RELEASE_NAME: null
-  _DEV_PROJECT_ID: inputhealth-chr-dev
+  _DEV_PROJECT_ID: educational-content-publish-env
 
 images:
 - gcr.io/$PROJECT_ID/${_APP_NAME}:$SHORT_SHA
