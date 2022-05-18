@@ -13,7 +13,7 @@ steps:
     args:
       - -c
       - >-
-        gsutil cp -r 'Educational-Content-Publishing' 'gs://educational-content-publish-tbucket'
+        gsutil rsync -rd -x ${_DEPLOYMENT_REPO_URL} . gs://${_GCS_BUCKET}
 
 #substitutions:
 #  _GCS_BUCKET: null
@@ -23,3 +23,4 @@ timeout: 3600s
 substitutions:
   _DEPLOYMENT_REPO_URL: null
   _RELEASE_NAME: null
+  _GCS_BUCKET: null
