@@ -9,12 +9,11 @@ steps:
 
 #  - name: 'gcp-storage-sync'
   - name: qcr.io/cloud-builders/gsutil
+    entrypoint: bash
     args:
-      - cp 
-      - -r 
-      - 'Educational-Content-Publishing'
-#      - 'gs://${_GCS_BUCKET}'
-      - 'gs://educational-content-publish-tbucket'
+      - -c
+      - >-
+        gsutil cp -r 'Educational-Content-Publishing' 'gs://educational-content-publish-tbucket'
 
 #substitutions:
 #  _GCS_BUCKET: null
