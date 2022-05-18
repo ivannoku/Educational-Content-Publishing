@@ -2,11 +2,10 @@ steps:
 #  - name: 'gcp-storage-sync'
   - name: qcr.io/cloud-builders/gsutil
     args:
-      - '_m'
+      - '-m'
       - 'rsync'
       - '-d'
-      - '=r'
-      - 'dags'
+      - '-r'
       - 'qs: //${_GCS_BUCKET}'
 
 substitutions:
