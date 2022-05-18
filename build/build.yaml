@@ -6,7 +6,7 @@ steps:
       - 'rsync'
       - '-d'
       - '-r'
-      - 'qs: //${_GCS_BUCKET}'
+      - 'gs://${_GCS_BUCKET}'
 
 substitutions:
   _GCS_BUCKET: null
