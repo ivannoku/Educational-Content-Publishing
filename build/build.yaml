@@ -7,8 +7,8 @@ steps:
   #     - >-
   #       git clone --single-branch --branch ${_RELEASE_NAME} ${_DEPLOYMENT_REPO_URL} 
 
-#  - name: 'gcp-storage-sync'
-  - name: qcr.io/cloud-builders/gsutil
+  - name: gcp-storage-sync
+#  - name: qcr.io/cloud-builders/gsutil
     entrypoint: bash
     args:
       - -c
