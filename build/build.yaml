@@ -10,10 +10,8 @@ steps:
 #  - name: 'gcp-storage-sync'
   - name: qcr.io/cloud-builders/gsutil
     args:
-      - 'rsync'
-      - '-m'      
-      - '-d'
-      - '-r'
+      - cp 
+      - -r 
       - 'Educational-Content-Publishing'
 #      - 'gs://${_GCS_BUCKET}'
       - 'gs://educational-content-publish-tbucket'
