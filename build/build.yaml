@@ -1,6 +1,4 @@
 steps:
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args:
-    - -c 
-    - >-
+  - name: 'gcp-storage-sync'
+    args: -d
       gsutil rsync -rd -x \.git . gs://educational-content-publish-tbucket
