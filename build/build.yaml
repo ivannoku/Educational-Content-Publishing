@@ -3,4 +3,4 @@ steps:
     args: 
     - -rd 
     - -x
-      gsutil rsync \.git . gs://educational-content-publish-tbucket
+      gsutil rsync -rd -x \.git . gs://educational-content-publish-tbucket
